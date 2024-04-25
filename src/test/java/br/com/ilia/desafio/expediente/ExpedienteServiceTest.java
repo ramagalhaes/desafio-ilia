@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,7 +60,7 @@ class ExpedienteServiceTest {
         Batida batida = new Batida("2024-04-25T12:00:00");
         Expediente expediente = Expediente.builder()
                 .dia(dia)
-                .pontos(List.of(momento, momento2))
+                .pontos(new ArrayList<>(List.of(momento)))
                 .build();
         ExpedienteDto expectedResult = new ExpedienteDto(dia, List.of(momento, momento2));
         when(expedienteRepository.findByDia(dia)).thenReturn(Optional.of(expediente));
@@ -80,7 +82,7 @@ class ExpedienteServiceTest {
         Batida batida = new Batida("2024-04-25T13:00:00");
         Expediente expediente = Expediente.builder()
                 .dia(dia)
-                .pontos(List.of(momento, momento2, momento3))
+                .pontos(new ArrayList<>(Arrays.asList(momento, momento2)))
                 .build();
         ExpedienteDto expectedResult = new ExpedienteDto(dia, List.of(momento, momento2, momento3));
         when(expedienteRepository.findByDia(dia)).thenReturn(Optional.of(expediente));
