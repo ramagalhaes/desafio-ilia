@@ -25,7 +25,7 @@ public class ExpedienteService {
         return repository.findAllByDiaContains(anoMes);
     }
 
-    public Expediente createBatida(Batida batida) {
+    private Expediente createBatida(Batida batida) {
         return new FieldHandler(
                 new DateHandler(
                         new ExpedienteHandler(null, repository)
