@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -15,11 +17,15 @@ public class ExpedienteService {
     private final ExpedienteRepository repository;
 
     public ExpedienteDto baterPonto(Batida batida) {
-        Expediente expediente = handleBatidaRequest(batida);
+        Expediente expediente = createBatida(batida);
         return ExpedienteDto.fromEntity(repository.save(expediente));
     }
 
-    public Expediente handleBatidaRequest(Batida batida) {
+    public List<Expediente> findAllByAnoMes(String anoMes) {
+        return repository.findAllByDiaContains(anoMes);
+    }
+
+    public Expediente createBatida(Batida batida) {
         return new FieldHandler(
                 new DateHandler(
                         new ExpedienteHandler(null, repository)

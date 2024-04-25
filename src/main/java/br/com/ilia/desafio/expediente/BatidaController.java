@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/batidas")
+@RequestMapping("/v1/batidas")
 @RequiredArgsConstructor
 public class BatidaController {
 
