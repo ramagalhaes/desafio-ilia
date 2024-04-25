@@ -26,16 +26,12 @@ public class Relatorio {
         this.anoMes = anoMes;
         this.expedientes = expedientes;
         horasTrabalhadas = convertSecondsToIso8601(horasTrabalhadasEmSegundos);
-        horasExcedentes = convertSecondsToIso8601(calculateHorasExcedentes(horasTrabalhadasEmSegundos));
-        horasDevidas = convertSecondsToIso8601(calculateHorasDevidas(horasTrabalhadasEmSegundos));
+        horasExcedentes = convertSecondsToIso8601(calculateDifference(horasTrabalhadasEmSegundos, EXPECTED_MONTHLY_HOURS));
+        horasDevidas = convertSecondsToIso8601(calculateDifference(horasTrabalhadasEmSegundos, EXPECTED_MONTHLY_HOURS));
     }
 
     private String convertSecondsToIso8601(long seconds) {
         return Duration.of(seconds, ChronoUnit.SECONDS).toString();
-    }
-
-    private long calculateHorasExcedentes(long seconds) {
-        return calculateDifference(seconds, EXPECTED_MONTHLY_HOURS);
     }
 
     private long calculateDifference(long seconds, long seconds2) {
@@ -44,7 +40,4 @@ public class Relatorio {
         return diff;
     }
 
-    private long calculateHorasDevidas(long seconds) {
-        return calculateDifference(EXPECTED_MONTHLY_HOURS, seconds);
-    }
 }
