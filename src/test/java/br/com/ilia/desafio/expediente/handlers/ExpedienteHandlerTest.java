@@ -46,7 +46,7 @@ class ExpedienteHandlerTest {
         // Verify
         assertEquals("2024-04-25", result.getDia());
         assertEquals(1, result.getPontos().size());
-        assertEquals("08:30:00", result.getPontos().getFirst());
+        assertEquals("08:30:00", result.getPontos().get(0));
         verify(mockRepository, times(1)).findByDia("2024-04-25");
     }
 
@@ -65,7 +65,7 @@ class ExpedienteHandlerTest {
         // Verify
         assertEquals("2024-04-25", result.getDia());
         assertEquals(1, result.getPontos().size());
-        assertEquals("09:00:00", result.getPontos().getFirst());
+        assertEquals("09:00:00", result.getPontos().get(0));
         verify(mockRepository, times(1)).findByDia("2024-04-25");
     }
 
@@ -106,7 +106,7 @@ class ExpedienteHandlerTest {
         // Verify
         assertEquals("2024-04-25", result.getDia());
         assertEquals(3, result.getPontos().size());
-        assertEquals(startMoment, result.getPontos().getFirst());
+        assertEquals(startMoment, result.getPontos().get(0));
         assertEquals(outToLunch, result.getPontos().get(1));
         assertEquals("13:00:00", result.getPontos().get(2));
         verify(mockRepository, times(1)).findByDia("2024-04-25");

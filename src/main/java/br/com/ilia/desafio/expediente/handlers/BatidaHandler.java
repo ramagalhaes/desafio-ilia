@@ -3,7 +3,7 @@ package br.com.ilia.desafio.expediente.handlers;
 import br.com.ilia.desafio.expediente.Batida;
 import br.com.ilia.desafio.expediente.Expediente;
 
-public sealed abstract class BatidaHandler permits DateHandler, ExpedienteHandler, FieldHandler {
+public abstract sealed class BatidaHandler permits DateHandler, ExpedienteHandler, FieldHandler {
 
     private final BatidaHandler nextHandler;
 

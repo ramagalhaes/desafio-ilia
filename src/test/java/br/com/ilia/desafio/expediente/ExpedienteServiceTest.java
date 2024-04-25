@@ -179,6 +179,6 @@ class ExpedienteServiceTest {
 
         // Verify
         assertEquals(1, result.size());
-        assertEquals(expectedExpediente, result.getFirst());
+        assertEquals(expectedExpediente, result.get(0));
     }
 }
