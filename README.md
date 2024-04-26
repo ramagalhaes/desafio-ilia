@@ -19,4 +19,5 @@ Entendo que a ordem dos Handlers seja crucial e que a alteração na ordem pode 
 Como mencionei, esse foi o método escolhido para que seja possível demonstrar conceitos básicos da OO, como herança e abstração.
 ### Regras de negócio
 As regras de negócio foram deixadas na camada de domínio da aplicação, dessa forma, quando houverem mudanças no código as regras permanecerão as mesmas, aumentando a escalabilidade do projeto.
-
+## Relatório
+Para fazer os cálculos de horas excedentes e horas devidas será utilizado como padrão 168 horas mensais

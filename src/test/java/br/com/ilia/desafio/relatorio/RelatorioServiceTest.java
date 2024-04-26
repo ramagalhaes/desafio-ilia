@@ -30,13 +30,13 @@ public class RelatorioServiceTest {
     void ShouldGenerateRelatorio_WhenExpedienteExists() {
         // Setup
         String anoMes = "2024-04";
-        String horasTrabalhadas = "PT8H";
+        String horasTrabalhadas = "PT8H30M30S";
         String horasExcedentes = "PT0S";
-        String horasDevidas = "PT0S";
-        String momento1 = "09:00:00";
+        String horasDevidas = "PT159H29M30S";
+        String momento1 = "08:00:00";
         String momento2 = "12:00:00";
         String momento3 = "13:00:00";
-        String momento4 = "18:00:00";
+        String momento4 = "17:30:30";
         Expediente expediente = Expediente.builder()
                 .dia("2024-04-25")
                 .pontos(new ArrayList<>(List.of(momento1, momento2, momento3, momento4)))
@@ -66,7 +66,7 @@ public class RelatorioServiceTest {
         String anoMes = "2024-04";
         String horasTrabalhadas = "PT0S";
         String horasExcedentes = "PT0S";
-        String horasDevidas = "PT0S";
+        String horasDevidas = "PT168H";
 
         Expediente expediente = Expediente.builder()
                 .dia("2024-04-25")

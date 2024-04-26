@@ -27,7 +27,7 @@ public class Relatorio {
         this.expedientes = expedientes;
         horasTrabalhadas = convertSecondsToIso8601(horasTrabalhadasEmSegundos);
         horasExcedentes = convertSecondsToIso8601(calculateDifference(horasTrabalhadasEmSegundos, EXPECTED_MONTHLY_HOURS));
-        horasDevidas = convertSecondsToIso8601(calculateDifference(horasTrabalhadasEmSegundos, EXPECTED_MONTHLY_HOURS));
+        horasDevidas = convertSecondsToIso8601(calculateDifference(EXPECTED_MONTHLY_HOURS, horasTrabalhadasEmSegundos));
     }
 
     private String convertSecondsToIso8601(long seconds) {
