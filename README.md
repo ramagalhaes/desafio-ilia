@@ -11,7 +11,7 @@ Com a execução dos passos acima, a aplicação estará disponível na porta lo
 ### Chain of Responsibility
 Foi o método escolhido para tratar uma requisição de batida de ponto, uma vez que a manutenibilidade foi uma preocupação ao desenvolver essa aplicação, visto que ela é relativamente simples e poderia ser escalada.
 ### pontos positivos
-- Podendo tratar isoladamente cada aspecto da requisição.
+- Poder tratar isoladamente cada aspecto da requisição.
 - é possível entender o código com mais facilidade.
 - Utiliza princípios da orientação a objetos e SOLID.
 ### ressalvas
