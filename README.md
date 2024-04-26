@@ -1,6 +1,6 @@
 # Rodando a aplicação
 ### docker
-é possível iniciar a aplicação de maneira rápida, utilizando o plugin do Spring para gerar uma imagem docker, para isso:
+é possível iniciar a aplicação de maneira rápida utilizando o plugin do Spring para gerar uma imagem docker, para isso:
 -  rodar o comando `mvn spring-boot:build-image`
   
 Após a execução do comando acima uma imagem ficara disponível no seu computador, para rodar a imagem em um container:
