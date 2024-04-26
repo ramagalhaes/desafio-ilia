@@ -25,7 +25,7 @@ public class Expediente {
 
     @ElementCollection
     @CollectionTable
-    private List<String> pontos = new ArrayList<>();
+    private List<String> pontos = new ArrayList<>(4);
 
     public void addPonto(String ponto) {
         canRegisterNewPonto();
