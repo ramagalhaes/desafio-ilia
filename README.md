@@ -16,6 +16,6 @@ Também é legal utilizarmos a Orientação a Objtos ao nosso favor, tratando ta
 ### ressalvas
 Entendo que a ordem dos Handlers seja crucial e que a alteração na ordem pode interferir no funcionamento do programa, mas acredito que o mesmo também ocorreria com uma abordagem mais procedural.
 Como mencionei, esse foi o método escolhido para que seja possível demonstrar conceitos básicos da OO, como herança e abstração.
-## Regras de negócio
+### Regras de negócio
 As regras de negócio foram deixadas na camada de domínio da aplicação, dessa forma, quando houverem mudanças no código as regras permanecerão as mesmas, aumentando a escalabilidade do projeto.
 
