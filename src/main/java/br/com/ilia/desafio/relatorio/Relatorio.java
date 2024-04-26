@@ -25,9 +25,9 @@ public class Relatorio {
     public Relatorio(String anoMes, Long horasTrabalhadasEmSegundos, List<ExpedienteDto> expedientes) {
         this.anoMes = anoMes;
         this.expedientes = expedientes;
-        horasTrabalhadas = convertSecondsToIso8601(horasTrabalhadasEmSegundos);
-        horasExcedentes = convertSecondsToIso8601(calculateDifference(horasTrabalhadasEmSegundos, EXPECTED_MONTHLY_HOURS));
-        horasDevidas = convertSecondsToIso8601(calculateDifference(EXPECTED_MONTHLY_HOURS, horasTrabalhadasEmSegundos));
+        setHorasTrabalhadas(horasTrabalhadasEmSegundos);
+        setHorasExcedentes(horasTrabalhadasEmSegundos);
+        setHorasDevidas(horasTrabalhadasEmSegundos);
     }
 
     private String convertSecondsToIso8601(long seconds) {
@@ -40,4 +40,15 @@ public class Relatorio {
         return diff;
     }
 
+    private void setHorasDevidas(long seconds) {
+        this.horasDevidas = convertSecondsToIso8601(calculateDifference(EXPECTED_MONTHLY_HOURS, seconds));
+    }
+
+    private void setHorasExcedentes(long seconds) {
+        this.horasExcedentes = convertSecondsToIso8601(calculateDifference(seconds, EXPECTED_MONTHLY_HOURS));
+    }
+
+    private void setHorasTrabalhadas(long seconds) {
+        this.horasTrabalhadas = convertSecondsToIso8601(seconds);
+    }
 }
