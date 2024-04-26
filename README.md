@@ -11,8 +11,9 @@ Com a execução dos passos acima, a aplicação estará disponível na porta lo
 ### Chain of Responsibility
 Foi o método escolhido para tratar uma requisição de batida de ponto, uma vez que a manutenibilidade foi uma preocupação ao desenvolver essa aplicação, visto que ela é relativamente simples e poderia ser escalada.
 ### pontos positivos
-Podendo tratar isoladamente cada aspecto da requisição, é possível entender o código com mais facilidade.
-Também é legal utilizarmos a Orientação a Objtos ao nosso favor, tratando também tópicos dos princípios SOLID.
+- Podendo tratar isoladamente cada aspecto da requisição.
+- é possível entender o código com mais facilidade.
+- Utiliza princípios da orientação a objetos e SOLID.
 ### ressalvas
 Entendo que a ordem dos Handlers seja crucial e que a alteração na ordem pode interferir no funcionamento do programa, mas acredito que o mesmo também ocorreria com uma abordagem mais procedural.
 Como mencionei, esse foi o método escolhido para que seja possível demonstrar conceitos básicos da OO, como herança e abstração.
